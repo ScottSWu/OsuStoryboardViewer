@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Osu!Mania key test</title>
+<script type="text/javascript">
+var keys;
+function init() {
+	document.body.onkeydown = keyd;
+	document.body.onkeyup = keyu;
+	keys = new Array(512);
+	for (var i=0; i<keys.length; i++) keys[i] = false;
+	frame();
+}
+
+function frame() {
+	setTimeout(frame,50);
+	
+	var out = "";
+	for (var i=0; i<keys.length; i++) {
+		if (keys[i]) {
+			out += String.fromCharCode(i) + ",";
+		}
+	}
+	document.body.innerHTML = out;
+}
+
+function keyd(event) {
+	keys[event.which] = true;
+}
+
+function keyu(event) {
+	keys[event.which] = false;
+}
+</script>
+</head>
+<body onload="javascript: init();">
+</body>
+</html>

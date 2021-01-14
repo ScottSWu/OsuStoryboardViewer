@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8;" />
+<script type="text/javascript" src="/MediaElement.js/jquery.js"></script>
+<script type="text/javascript" src="/MediaElement.js/mediaelement-and-player.min.js"></script>
+<link rel="stylesheet" href="/MediaElement.js/mediaelementplayer.css" />
+<script type="text/javascript">
+function init() {
+	//var player = new MediaElementPlayer('#ap',{}); player.pause(); player.setSrc('Songs/39448 AKB48 - Flying Get/AKB48-.mp3'); player.play();
+	$("#ap").mediaelementplayer({
+		// shows debug errors on screen
+		enablePluginDebug: false,
+		// remove or reorder to change plugin priority
+		plugins: ['flash','silverlight'],
+		// specify to force MediaElement to use a particular video or audio type
+		type: '',
+		// path to Flash and Silverlight plugins
+		pluginPath: '/myjsfiles/',
+		// name of flash file
+		flashName: 'flashmediaelement.swf',
+		// name of silverlight file
+		silverlightName: 'silverlightmediaelement.xap',
+		// default if the <video width> is not specified
+		defaultVideoWidth: 480,
+		// default if the <video height> is not specified    
+		defaultVideoHeight: 270,
+		// overrides <video width>
+		pluginWidth: -1,
+		// overrides <video height>      
+		pluginHeight: -1,
+		// rate in milliseconds for Flash and Silverlight to fire the timeupdate event
+		// larger number is less accurate, but less strain on plugin->JavaScript bridge
+		timerRate: 250,
+		// method that fires when the Flash or Silverlight object is ready
+		success: function (mediaElement, domObject) {
+			 
+			// add event listener
+			mediaElement.addEventListener('timeupdate', function(e) {
+				 
+				document.getElementById('current-time').innerHTML = mediaElement.currentTime;
+				 
+			}, false);
+			 
+			// call the play method
+			mediaElement.play();
+			 
+		},
+		// fires when a problem is detected
+		error: function () {
+		 
+		}
+	});
+}
+</script>
+</head>
+<body onload="javascript: ;">
+<div class="container">
+<audio id="ap" controls="controls">
+	<source type="audio/mp3" src="Songs/39448 AKB48 - Flying Get/AKB48-.mp3" />
+	<object width="320" height="240" type="application/x-shockwave-flash" data="/MediaElement.js/flashmediaelement.swf">
+		<param name="movie" value="/MediaElement.js/flashmediaelement.swf" />
+		<param name="flashvars" value="controls=true&file=myvideo.mp4" />
+	</object>
+</audio>
+</div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+
+#storyboardContainer {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+
+#loading {
+	position: absolute;
+	top: -1000px;
+	padding: 0px;
+	width: 128px;
+	height: 128px;
+	background-image: url('images/loader-image.gif');
+	background-size: 128px 128px;
+	background-repeat: no-repeat;
+}
+
+#menu {
+	width: 640px;
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+}
+
+.title {
+	text-align: center;
+}
+
+.song_item {
+	cursor: pointer;
+}
+
+.song_item:hover {
+	text-decoration: underline;
+}
+
+.tree_indicator {
+	width: 20px;
+	float: left;
+	display: block;
+	text-decoration: none;
+}
+
+.group_item {
+	overflow: hidden;
+	max-height: 0px;
+}
+
+.map_item {
+	cursor: pointer;
+	margin-left: 20px;
+}
+
+.map_item:hover {
+	color: #000080;
+}
+
+.info_good {
+	color: #008000;
+}
+
+.info_error {
+	color: #FF0000;
+}
+
+#storyboardContainer {
+	overflow: hidden;
+}
+
+#coverContainer {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 999997;
+}
+
+#selectionContainer {
+	position: absolute;
+	top: 20px;
+	left: 0px;
+	width: 100%;
+	font-family: Helvetica;
+	max-height: 100%;
+	overflow: auto;
+	z-index: 999998;
+}
+
+#optionsContainer {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	max-height: 100%;
+	overflow: auto;
+	cursor: default;
+	z-index: 999999;
+}
+
+#optionsLeft {
+	float: left;
+	padding: 5px;
+	max-height: 100%;
+	overflow: auto;
+	background-color: #FFFFFF;
+	border: 2px solid #000000;
+	opacity: 0.2;
+}
+
+#optionsLeft:hover {
+	opacity: 0.8;
+}
+
+#optionsSlider {
+	width: 20px;
+	margin-left: 10px;
+	background-color: #FF0000;
+	float: right;
+	opacity: 0.0;
+}
+
+#optionsSlider:hover {
+	opacity: 0.5;
+}
+
+#fileSubmit {
+	display: none;
+}
